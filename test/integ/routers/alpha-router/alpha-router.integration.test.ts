@@ -7,8 +7,8 @@ import {
   AllowanceTransfer,
   permit2Address,
   PermitSingle
-} from '@uniswap/permit2-sdk';
-import { Protocol } from '@uniswap/router-sdk';
+} from '@taraswap/permit2-sdk';
+import { Protocol } from '@taraswap/router-sdk';
 import {
   ChainId,
   Currency,
@@ -19,15 +19,15 @@ import {
   Rounding,
   Token,
   TradeType
-} from '@uniswap/sdk-core';
+} from '@taraswap/sdk-core';
 import {
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN
 } from '@uniswap/universal-router-sdk';
 import {
   Permit2Permit
 } from '@uniswap/universal-router-sdk/dist/utils/inputTokens';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { Pair } from '@taraswap/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@taraswap/v3-sdk';
 import bunyan from 'bunyan';
 import { BigNumber, providers, Wallet } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
@@ -63,7 +63,7 @@ import {
   SUPPORTED_CHAINS,
   SWAP_ROUTER_02_ADDRESSES,
   SwapOptions,
-  SwapType,
+  SwapType, TARAPEPE_TESTNET,
   TenderlySimulator,
   TokenPropertiesProvider,
   UNI_GOERLI,
@@ -80,7 +80,7 @@ import {
   USDC_NATIVE_POLYGON,
   USDC_ON,
   USDT_BNB,
-  USDT_MAINNET,
+  USDT_MAINNET, USDT_TESTNET,
   V2_SUPPORTED,
   V2PoolProvider,
   V2Route,
@@ -144,6 +144,7 @@ const GAS_ESTIMATE_DEVIATION_PERCENT: { [chainId in ChainId]: number }  = {
   [ChainId.ROOTSTOCK]: 30,
   [ChainId.BLAST]: 34,
   [ChainId.ZKSYNC]: 40,
+  [ChainId.TARAXA_TESTNET]: 30,
 }
 
 const V2_SUPPORTED_PAIRS = [
@@ -3361,6 +3362,7 @@ describe('quote for other networks', () => {
     [ChainId.ROOTSTOCK]: () => USDC_ON(ChainId.ROOTSTOCK),
     [ChainId.BLAST]: () => USDB_BLAST,
     [ChainId.ZKSYNC]: () => USDC_ON(ChainId.ZKSYNC),
+    [ChainId.TARAXA_TESTNET]: () => USDT_TESTNET,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: () => Token } = {
     [ChainId.MAINNET]: () => DAI_ON(1),
@@ -3387,6 +3389,7 @@ describe('quote for other networks', () => {
     [ChainId.ROOTSTOCK]: () => WNATIVE_ON(ChainId.ROOTSTOCK),
     [ChainId.BLAST]: () => WNATIVE_ON(ChainId.BLAST),
     [ChainId.ZKSYNC]: () => WNATIVE_ON(ChainId.ZKSYNC),
+    [ChainId.TARAXA_TESTNET]: () => TARAPEPE_TESTNET,
   };
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.

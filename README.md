@@ -127,6 +127,12 @@ Value: 0x00
 Total ticks crossed: 7
 ```
 
+## Taraxa testnet
+
+```
+./bin/cli quote --tokenIn 0x869FFA5e06BE57200b01a1A373D1bA247364D94C --tokenOut 0x0a66473fF369d43f1C63832f7bb2fd887Ed16844 --amount 2000 --exactIn --minSplits 1 --router alpha --chainId 842
+```
+
 ## Rinkeby
 
 ```

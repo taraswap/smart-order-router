@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token, TradeType } from '@uniswap/sdk-core';
+import { Protocol } from '@taraswap/router-sdk';
+import { ChainId, Currency, Token, TradeType } from '@taraswap/sdk-core';
 import _ from 'lodash';
 
 import {
@@ -189,7 +189,11 @@ export class MixedQuoter extends BaseQuoter<
       `Getting quotes for mixed for ${routes.length} routes with ${amounts.length} amounts per route.`
     );
 
-    const { routesWithQuotes } = await quoteFn<MixedRoute>(amounts, routes, routingConfig);
+    const { routesWithQuotes } = await quoteFn<MixedRoute>(
+      amounts,
+      routes,
+      routingConfig
+    );
 
     metric.putMetric(
       'MixedQuotesLoad',

@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseBytes32String } from '@ethersproject/strings';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from '@taraswap/sdk-core';
 import _ from 'lodash';
 
 import { IERC20Metadata__factory } from '../types/v3/factories/IERC20Metadata__factory';
@@ -686,6 +686,62 @@ export const DAI_ZKSYNC = new Token(
   18,
   'DAI',
   'Dai Stablecoin'
+);
+
+export const WTARA_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+  18,
+  'WTARA',
+  'Wrapped TARA'
+);
+
+export const TARAPEPE_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x869FFA5e06BE57200b01a1A373D1bA247364D94C',
+  18,
+  'TPEPE',
+  'TARA PEPE memecoin'
+);
+
+export const USDT_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x0a66473ff369d43f1c63832f7bb2fd887ed16844',
+  6,
+  'USDT',
+  'Tether USD'
+);
+
+export const T1_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0xF998808aA55d2570e979C27Ce47C8018e5fAdbE8',
+  18,
+  'T1',
+  'Testnet Test token 1'
+);
+
+export const T2_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x7011596be357c709700710C9960cb366C41A4106',
+  18,
+  'T2',
+  'Testnet Test token 2'
+);
+
+export const T3_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x7a4Bccb79ab69852D857E5f77B0A3166700a9AB0',
+  18,
+  'T3',
+  'Testnet Test token 3'
+);
+
+export const LARA_TESTNET = new Token(
+  ChainId.TARAXA_TESTNET,
+  '0x3F48CB103C3172C24a9F6cF3be92d571bF7072af',
+  18,
+  'LARA',
+  'Testnet Lara token'
 );
 
 export class TokenProvider implements ITokenProvider {

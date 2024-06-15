@@ -3,14 +3,14 @@ import {
   Protocol,
   SwapRouter as SwapRouter02,
   Trade,
-} from '@uniswap/router-sdk';
-import { ChainId, Currency, TradeType } from '@uniswap/sdk-core';
+} from '@taraswap/router-sdk';
+import { ChainId, Currency, TradeType } from '@taraswap/sdk-core';
+import { Route as V2RouteRaw } from '@taraswap/v2-sdk';
+import { Route as V3RouteRaw } from '@taraswap/v3-sdk';
 import {
-  SwapRouter as UniversalRouter,
   UNIVERSAL_ROUTER_ADDRESS,
+  SwapRouter as UniversalRouter,
 } from '@uniswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
-import { Route as V3RouteRaw } from '@uniswap/v3-sdk';
 import _ from 'lodash';
 
 import {
@@ -18,9 +18,9 @@ import {
   MethodParameters,
   MixedRouteWithValidQuote,
   RouteWithValidQuote,
+  SWAP_ROUTER_02_ADDRESSES,
   SwapOptions,
   SwapType,
-  SWAP_ROUTER_02_ADDRESSES,
   V2RouteWithValidQuote,
   V3RouteWithValidQuote,
 } from '..';
@@ -235,7 +235,7 @@ export function buildSwapMethodParameters(
 ): MethodParameters {
   if (swapConfig.type == SwapType.UNIVERSAL_ROUTER) {
     return {
-      ...UniversalRouter.swapERC20CallParameters(trade, swapConfig),
+      ...UniversalRouter.swapERC20CallParameters(trade as any, swapConfig),
       to: UNIVERSAL_ROUTER_ADDRESS(chainId),
     };
   } else if (swapConfig.type == SwapType.SWAP_ROUTER_02) {

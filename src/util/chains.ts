@@ -3,8 +3,8 @@ import {
   Currency,
   Ether,
   NativeCurrency,
-  Token
-} from '@uniswap/sdk-core';
+  Token,
+} from '@taraswap/sdk-core';
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
@@ -26,6 +26,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BLAST,
   ChainId.ZORA,
   ChainId.ZKSYNC,
+  ChainId.TARAXA_TESTNET,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -108,6 +109,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.ZORA;
     case 324:
       return ChainId.ZKSYNC;
+    case 842:
+      return ChainId.TARAXA_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -136,6 +139,7 @@ export enum ChainName {
   BLAST = 'blast-mainnet',
   ZORA = 'zora-mainnet',
   ZKSYNC = 'zksync-mainnet',
+  TARAXA_TESTNET = 'taraxa-testnet',
 }
 
 export enum NativeCurrencyName {
@@ -302,6 +306,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.ZORA;
     case 324:
       return ChainName.ZKSYNC;
+    case 842:
+      return ChainName.TARAXA_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -351,6 +357,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_ZORA!;
     case ChainId.ZKSYNC:
       return process.env.JSON_RPC_PROVIDER_ZKSYNC!;
+    case ChainId.TARAXA_TESTNET:
+      return process.env.JSON_RPC_PROVIDER_TARAXA_TESTNET!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -526,6 +534,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WETH',
     'Wrapped Ether'
+  ),
+  [ChainId.TARAXA_TESTNET]: new Token(
+    ChainId.TARAXA_TESTNET,
+    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    18,
+    'WTARA',
+    'Wrapped TARA'
   ),
 };
 

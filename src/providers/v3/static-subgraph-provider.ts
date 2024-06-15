@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
-import { FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { ChainId, Token } from '@taraswap/sdk-core';
+import { FeeAmount, Pool } from '@taraswap/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 
@@ -44,13 +44,16 @@ import {
   USDC_OPTIMISM,
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
-  USDC_SEPOLIA, USDC_ZKSYNC, USDCE_ZKSYNC,
+  USDC_SEPOLIA,
+  USDC_ZKSYNC,
+  USDCE_ZKSYNC,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_GOERLI,
   USDT_MAINNET,
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
+  USDT_TESTNET,
   WBTC_ARBITRUM,
   WBTC_GNOSIS,
   WBTC_GOERLI,
@@ -61,7 +64,8 @@ import {
   WETH_POLYGON,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
-  WXDAI_GNOSIS
+  WTARA_TESTNET,
+  WXDAI_GNOSIS,
 } from '../token-provider';
 
 import { IV3PoolProvider } from './pool-provider';
@@ -166,7 +170,16 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.ZORA_SEPOLIA]: [WRAPPED_NATIVE_CURRENCY[ChainId.ZORA_SEPOLIA]!],
   [ChainId.ROOTSTOCK]: [WRAPPED_NATIVE_CURRENCY[ChainId.ROOTSTOCK]!],
   [ChainId.BLAST]: [WRAPPED_NATIVE_CURRENCY[ChainId.BLAST]!, USDB_BLAST],
-  [ChainId.ZKSYNC]: [WRAPPED_NATIVE_CURRENCY[ChainId.ZKSYNC]!, USDCE_ZKSYNC, USDC_ZKSYNC],
+  [ChainId.ZKSYNC]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.ZKSYNC]!,
+    USDCE_ZKSYNC,
+    USDC_ZKSYNC,
+  ],
+  [ChainId.TARAXA_TESTNET]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.TARAXA_TESTNET]!,
+    USDT_TESTNET,
+    WTARA_TESTNET,
+  ],
 };
 
 /**

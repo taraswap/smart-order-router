@@ -3,11 +3,9 @@ import https from 'https';
 
 import { MaxUint256 } from '@ethersproject/constants';
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { permit2Address } from '@uniswap/permit2-sdk';
-import { ChainId } from '@uniswap/sdk-core';
-import {
-  UNIVERSAL_ROUTER_ADDRESS,
-} from '@uniswap/universal-router-sdk';
+import { permit2Address } from '@taraswap/permit2-sdk';
+import { ChainId } from '@taraswap/sdk-core';
+import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
 import axios, { AxiosRequestConfig } from 'axios';
 import { BigNumber } from 'ethers/lib/ethers';
 
@@ -711,8 +709,8 @@ export class TenderlySimulator extends Simulator {
           ],
           swap.block_number
             ? BigNumber.from(swap.block_number)
-              .toHexString()
-              .replace('0x0', '0x')
+                .toHexString()
+                .replace('0x0', '0x')
             : 'latest',
         ],
       };

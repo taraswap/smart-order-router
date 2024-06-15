@@ -1,19 +1,19 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { ChainId, TradeType } from '@uniswap/sdk-core';
+import { permit2Address } from '@taraswap/permit2-sdk';
+import { ChainId, TradeType } from '@taraswap/sdk-core';
 import { BigNumber } from 'ethers/lib/ethers';
 
 import {
   GasModelProviderConfig,
   SwapOptions,
   SwapRoute,
-  SwapType
+  SwapType,
 } from '../routers';
 import { Erc20__factory } from '../types/other/factories/Erc20__factory';
 import { Permit2__factory } from '../types/other/factories/Permit2__factory';
 import { CurrencyAmount, log, SWAP_ROUTER_02_ADDRESSES } from '../util';
 
 import { IPortionProvider } from './portion-provider';
-import { permit2Address } from '@uniswap/permit2-sdk';
 
 export type SimulationResult = {
   transaction: {
@@ -79,7 +79,12 @@ export abstract class Simulator {
         'User has sufficient balance to simulate. Simulating transaction.'
       );
       try {
-        return this.simulateTransaction(fromAddress, swapOptions, swapRoute, providerConfig);
+        return this.simulateTransaction(
+          fromAddress,
+          swapOptions,
+          swapRoute,
+          providerConfig
+        );
       } catch (e) {
         log.error({ e }, 'Error simulating transaction');
         return {

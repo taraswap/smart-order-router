@@ -5,7 +5,7 @@ import { MaxUint256 } from '@ethersproject/constants';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { permit2Address } from '@taraswap/permit2-sdk';
 import { ChainId } from '@taraswap/sdk-core';
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS } from '@taraswap/universal-router-sdk';
 import axios, { AxiosRequestConfig } from 'axios';
 import { BigNumber } from 'ethers/lib/ethers';
 

@@ -12,6 +12,7 @@ import {
   Token,
   TradeType,
 } from '@taraswap/sdk-core';
+import { SwapOptions as UniversalRouterSwapOptions } from '@taraswap/universal-router-sdk';
 import { Route as V2RouteRaw } from '@taraswap/v2-sdk';
 import {
   Pool,
@@ -19,7 +20,6 @@ import {
   MethodParameters as SDKMethodParameters,
   Route as V3RouteRaw,
 } from '@taraswap/v3-sdk';
-import { SwapOptions as UniversalRouterSwapOptions } from '@uniswap/universal-router-sdk';
 
 import { SimulationStatus } from '../providers';
 import { CurrencyAmount } from '../util/amounts';

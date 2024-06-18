@@ -5,12 +5,12 @@ import {
   Trade,
 } from '@taraswap/router-sdk';
 import { ChainId, Currency, TradeType } from '@taraswap/sdk-core';
-import { Route as V2RouteRaw } from '@taraswap/v2-sdk';
-import { Route as V3RouteRaw } from '@taraswap/v3-sdk';
 import {
   UNIVERSAL_ROUTER_ADDRESS,
   SwapRouter as UniversalRouter,
-} from '@uniswap/universal-router-sdk';
+} from '@taraswap/universal-router-sdk';
+import { Route as V2RouteRaw } from '@taraswap/v2-sdk';
+import { Route as V3RouteRaw } from '@taraswap/v3-sdk';
 import _ from 'lodash';
 
 import {

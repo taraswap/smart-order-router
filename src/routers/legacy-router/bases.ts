@@ -16,11 +16,11 @@ import {
   USDC_ZKSYNC,
   USDCE_ZKSYNC,
   USDT_BNB,
-  USDT_MAINNET,
-  USDT_TESTNET,
+  USDT_MAINNET, USDT_TARAXA,
+  USDT_TARAXA_TESTNET,
   WBTC_MAINNET,
   WMATIC_POLYGON,
-  WMATIC_POLYGON_MUMBAI,
+  WMATIC_POLYGON_MUMBAI
 } from '../../providers/token-provider';
 import { WRAPPED_NATIVE_CURRENCY } from '../../util/chains';
 
@@ -87,7 +87,11 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
     ],
     [ChainId.TARAXA_TESTNET]: [
       WRAPPED_NATIVE_CURRENCY[ChainId.TARAXA_TESTNET]!,
-      USDT_TESTNET,
+      USDT_TARAXA_TESTNET,
+    ],
+    [ChainId.TARAXA]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.TARAXA]!,
+      USDT_TARAXA,
     ],
   };
 };

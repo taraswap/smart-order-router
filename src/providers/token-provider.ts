@@ -688,6 +688,30 @@ export const DAI_ZKSYNC = new Token(
   'Dai Stablecoin'
 );
 
+export const WTARA = new Token( //todo: replace with real address
+  ChainId.TARAXA,
+  '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+  18,
+  'WTARA',
+  'Wrapped TARA'
+);
+
+export const TARAPEPE = new Token( //todo: replace with real address
+  ChainId.TARAXA,
+  '0x869FFA5e06BE57200b01a1A373D1bA247364D94C',
+  18,
+  'TPEPE',
+  'TARA PEPE memecoin'
+);
+
+export const USDT_TARAXA = new Token( //todo: replace with real address
+  ChainId.TARAXA,
+  '0x0a66473ff369d43f1c63832f7bb2fd887ed16844',
+  6,
+  'USDT',
+  'Tether USD'
+);
+
 export const WTARA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
   '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
@@ -704,7 +728,7 @@ export const TARAPEPE_TESTNET = new Token(
   'TARA PEPE memecoin'
 );
 
-export const USDT_TESTNET = new Token(
+export const USDT_TARAXA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
   '0x0a66473ff369d43f1c63832f7bb2fd887ed16844',
   6,

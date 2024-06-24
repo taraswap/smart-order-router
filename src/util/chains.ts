@@ -542,6 +542,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'WTARA',
     'Wrapped TARA'
   ),
+  [ChainId.TARAXA]: new Token( //todo: replace with real address
+    ChainId.TARAXA,
+    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    18,
+    'WTARA',
+    'Wrapped TARA'
+  ),
 };
 
 function isMatic(

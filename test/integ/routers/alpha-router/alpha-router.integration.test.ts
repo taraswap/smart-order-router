@@ -80,7 +80,7 @@ import {
   USDC_NATIVE_POLYGON,
   USDC_ON,
   USDT_BNB,
-  USDT_MAINNET, USDT_TESTNET,
+  USDT_MAINNET, USDT_TARAXA_TESTNET,
   V2_SUPPORTED,
   V2PoolProvider,
   V2Route,
@@ -3362,7 +3362,7 @@ describe('quote for other networks', () => {
     [ChainId.ROOTSTOCK]: () => USDC_ON(ChainId.ROOTSTOCK),
     [ChainId.BLAST]: () => USDB_BLAST,
     [ChainId.ZKSYNC]: () => USDC_ON(ChainId.ZKSYNC),
-    [ChainId.TARAXA_TESTNET]: () => USDT_TESTNET,
+    [ChainId.TARAXA_TESTNET]: () => USDT_TARAXA_TESTNET,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: () => Token } = {
     [ChainId.MAINNET]: () => DAI_ON(1),

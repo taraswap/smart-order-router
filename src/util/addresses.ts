@@ -98,6 +98,7 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.ZORA]: '0x9D0F15f2cf58655fDDcD1EE6129C547fDaeD01b1',
   [ChainId.ZKSYNC]: '0x071Bd2063dF031EDd110E27C6F4CDe50A3DeF2d4',
   [ChainId.TARAXA_TESTNET]: '0x4698ecaCAD74c789531Df4b8983a9E6E7941319C',
+  [ChainId.TARAXA]: '0x4698ecaCAD74c789531Df4b8983a9E6E7941319C', //todo: replace with real address
 };
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
@@ -290,6 +291,13 @@ export const WETH9: {
     'Wrapped Ether'
   ),
   [ChainId.TARAXA_TESTNET]: new Token(
+    ChainId.TARAXA_TESTNET,
+    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    18,
+    'WTARA',
+    'Wrapped TARA'
+  ),
+  [ChainId.TARAXA]: new Token(
     ChainId.TARAXA_TESTNET,
     '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
     18,

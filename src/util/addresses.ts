@@ -297,8 +297,8 @@ export const WETH9: {
     'WTARA',
     'Wrapped TARA'
   ),
-  [ChainId.TARAXA]: new Token(
-    ChainId.TARAXA_TESTNET,
+  [ChainId.TARAXA]: new Token( //todo: replace with real address
+    ChainId.TARAXA,
     '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
     18,
     'WTARA',

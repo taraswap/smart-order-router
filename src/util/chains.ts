@@ -27,6 +27,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.ZORA,
   ChainId.ZKSYNC,
   ChainId.TARAXA_TESTNET,
+  ChainId.TARAXA,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -111,6 +112,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.ZKSYNC;
     case 842:
       return ChainId.TARAXA_TESTNET;
+    case 841:
+      return ChainId.TARAXA;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -140,6 +143,7 @@ export enum ChainName {
   ZORA = 'zora-mainnet',
   ZKSYNC = 'zksync-mainnet',
   TARAXA_TESTNET = 'taraxa-testnet',
+  TARAXA = 'taraxa',
 }
 
 export enum NativeCurrencyName {
@@ -151,6 +155,7 @@ export enum NativeCurrencyName {
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
+  TARA = 'TARA',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -234,6 +239,16 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.TARAXA]: [
+    'TARA',
+    'Tara',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.TARAXA_TESTNET]: [
+    'TARA',
+    'Tara',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -258,6 +273,8 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BLAST]: NativeCurrencyName.ETHER,
   [ChainId.ZORA]: NativeCurrencyName.ETHER,
   [ChainId.ZKSYNC]: NativeCurrencyName.ETHER,
+  [ChainId.TARAXA]: NativeCurrencyName.TARA,
+  [ChainId.TARAXA_TESTNET]: NativeCurrencyName.TARA,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -308,6 +325,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.ZKSYNC;
     case 842:
       return ChainName.TARAXA_TESTNET;
+    case 841:
+      return ChainName.TARAXA;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -359,6 +378,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_ZKSYNC!;
     case ChainId.TARAXA_TESTNET:
       return process.env.JSON_RPC_PROVIDER_TARAXA_TESTNET!;
+    case ChainId.TARAXA:
+      return process.env.JSON_RPC_PROVIDER_TARAXA!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -551,6 +572,32 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   ),
 };
 
+function isTaraxa(
+  chainId: number
+): chainId is ChainId.TARAXA | ChainId.TARAXA_TESTNET {
+  return chainId === ChainId.POLYGON_MUMBAI || chainId === ChainId.POLYGON;
+}
+
+class TaraxaNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isTaraxa(this.chainId)) throw new Error('Not taraxa');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isTaraxa(chainId)) throw new Error('Not taraxa');
+    super(chainId, 18, 'TARA', 'Tara');
+  }
+}
+
 function isMatic(
   chainId: number
 ): chainId is ChainId.POLYGON | ChainId.POLYGON_MUMBAI {
@@ -736,6 +783,8 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new BnbNativeCurrency(chainId);
   } else if (isAvax(chainId)) {
     cachedNativeCurrency[chainId] = new AvalancheNativeCurrency(chainId);
+  } else if (isTaraxa(chainId)) {
+    cachedNativeCurrency[chainId] = new TaraxaNativeCurrency(chainId);
   } else {
     cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);
   }

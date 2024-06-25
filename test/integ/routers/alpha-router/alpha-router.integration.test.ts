@@ -35,6 +35,7 @@ import { parseEther } from 'ethers/lib/utils';
 import 'jest-environment-hardhat';
 import _ from 'lodash';
 import NodeCache from 'node-cache';
+import { TARAPEPE, USDT_TARAXA } from '../../../../build/main';
 import {
   AlphaRouter,
   AlphaRouterConfig,
@@ -145,6 +146,7 @@ const GAS_ESTIMATE_DEVIATION_PERCENT: { [chainId in ChainId]: number }  = {
   [ChainId.BLAST]: 34,
   [ChainId.ZKSYNC]: 40,
   [ChainId.TARAXA_TESTNET]: 30,
+  [ChainId.TARAXA]: 30,
 }
 
 const V2_SUPPORTED_PAIRS = [
@@ -3363,6 +3365,7 @@ describe('quote for other networks', () => {
     [ChainId.BLAST]: () => USDB_BLAST,
     [ChainId.ZKSYNC]: () => USDC_ON(ChainId.ZKSYNC),
     [ChainId.TARAXA_TESTNET]: () => USDT_TARAXA_TESTNET,
+    [ChainId.TARAXA]: () => USDT_TARAXA,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: () => Token } = {
     [ChainId.MAINNET]: () => DAI_ON(1),
@@ -3390,6 +3393,7 @@ describe('quote for other networks', () => {
     [ChainId.BLAST]: () => WNATIVE_ON(ChainId.BLAST),
     [ChainId.ZKSYNC]: () => WNATIVE_ON(ChainId.ZKSYNC),
     [ChainId.TARAXA_TESTNET]: () => TARAPEPE_TESTNET,
+    [ChainId.TARAXA]: () => TARAPEPE,
   };
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.

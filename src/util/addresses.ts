@@ -27,6 +27,17 @@ export const TARAXA_TESTNET_SWAP_ROUTER_02_ADDRESS =
 export const TARAXA_TESTNET_V3_MIGRATOR_ADDRESS =
   CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3MigratorAddress;
 
+export const TARAXA_TICK_LENS_ADDRESS =
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].tickLensAddress;
+export const TARAXA_NONFUNGIBLE_POSITION_MANAGER_ADDRESS =
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET]
+    .nonfungiblePositionManagerAddress;
+export const TARAXA_SWAP_ROUTER_02_ADDRESS =
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].swapRouter02Address;
+export const TARAXA_V3_MIGRATOR_ADDRESS =
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3MigratorAddress;
+
+
 export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   ...constructSameAddressMap(FACTORY_ADDRESS),
   [ChainId.CELO]: CHAIN_TO_ADDRESSES_MAP[ChainId.CELO].v3CoreFactoryAddress,
@@ -53,7 +64,8 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].v3CoreFactoryAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3CoreFactoryAddress,
-  // TODO: Gnosis + Moonbeam contracts to be deployed
+  [ChainId.TARAXA]:
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].v3CoreFactoryAddress,
 };
 
 export const QUOTER_V2_ADDRESSES: AddressMap = {
@@ -80,7 +92,8 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].quoterAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].quoterAddress,
-  // TODO: Gnosis + Moonbeam contracts to be deployed
+  [ChainId.TARAXA]:
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].quoterAddress,
 };
 
 export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
@@ -97,8 +110,8 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.BLAST]: '0x9D0F15f2cf58655fDDcD1EE6129C547fDaeD01b1',
   [ChainId.ZORA]: '0x9D0F15f2cf58655fDDcD1EE6129C547fDaeD01b1',
   [ChainId.ZKSYNC]: '0x071Bd2063dF031EDd110E27C6F4CDe50A3DeF2d4',
-  [ChainId.TARAXA_TESTNET]: '0x4698ecaCAD74c789531Df4b8983a9E6E7941319C',
-  [ChainId.TARAXA]: '0x4698ecaCAD74c789531Df4b8983a9E6E7941319C', //todo: replace with real address
+  [ChainId.TARAXA_TESTNET]: '0xeb8eD5Bc26bC56124A226BbC2C346341560D5fb0',
+  [ChainId.TARAXA]: '0xc0DE7F72199295F72E1E0015D11b77F2681e1140',
 };
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
@@ -133,7 +146,8 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].multicallAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].multicallAddress,
-  // TODO: Gnosis + Moonbeam contracts to be deployed
+  [ChainId.TARAXA]:
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].multicallAddress,
 };
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
@@ -292,14 +306,14 @@ export const WETH9: {
   ),
   [ChainId.TARAXA_TESTNET]: new Token(
     ChainId.TARAXA_TESTNET,
-    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    '0x77f0ceda294cb940b9704ddf3ca3a9faa742381f',
     18,
     'WTARA',
     'Wrapped TARA'
   ),
-  [ChainId.TARAXA]: new Token( //todo: replace with real address
+  [ChainId.TARAXA]: new Token(
     ChainId.TARAXA,
-    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    '0x5d0fa4c5668e5809c83c95a7cef3a9dd7c68d4fe',
     18,
     'WTARA',
     'Wrapped TARA'

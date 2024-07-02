@@ -688,20 +688,12 @@ export const DAI_ZKSYNC = new Token(
   'Dai Stablecoin'
 );
 
-export const WTARA = new Token( //todo: replace with real address
+export const WTARA = new Token(
   ChainId.TARAXA,
-  '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+  '0x5d0fa4c5668e5809c83c95a7cef3a9dd7c68d4fe',
   18,
   'WTARA',
   'Wrapped TARA'
-);
-
-export const TARAPEPE = new Token( //todo: replace with real address
-  ChainId.TARAXA,
-  '0x869FFA5e06BE57200b01a1A373D1bA247364D94C',
-  18,
-  'TPEPE',
-  'TARA PEPE memecoin'
 );
 
 export const USDT_TARAXA = new Token( //todo: replace with real address
@@ -714,7 +706,7 @@ export const USDT_TARAXA = new Token( //todo: replace with real address
 
 export const WTARA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+  '0x77f0ceda294cb940b9704ddf3ca3a9faa742381f',
   18,
   'WTARA',
   'Wrapped TARA'
@@ -722,50 +714,50 @@ export const WTARA_TESTNET = new Token(
 
 export const TARAPEPE_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x869FFA5e06BE57200b01a1A373D1bA247364D94C',
+  '0x5289040F08daD992FcE25fC3C3C6FC51B7E94932',
   18,
   'TPEPE',
-  'TARA PEPE memecoin'
+  'Tarapepe'
 );
 
 export const USDT_TARAXA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x0a66473ff369d43f1c63832f7bb2fd887ed16844',
+  '0x30c708A962641B223b6b78237A402FAeD9860fc2',
   6,
   'USDT',
-  'Tether USD'
+  'USDT'
 );
 
 export const T1_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0xF998808aA55d2570e979C27Ce47C8018e5fAdbE8',
+  '0x705Ca5F051440EaC9956d9Aa89b07E5594d13Cb1',
   18,
   'T1',
-  'Testnet Test token 1'
+  'T1'
 );
 
 export const T2_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x7011596be357c709700710C9960cb366C41A4106',
+  '0xA024De1ca9dA426e4300e8e741c81ABf9E23eEB3',
   18,
   'T2',
-  'Testnet Test token 2'
+  'T2'
 );
 
 export const T3_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x7a4Bccb79ab69852D857E5f77B0A3166700a9AB0',
+  '0x622622a6063A45B3DDEA4b3889d12B18E62cdfa6',
   18,
   'T3',
-  'Testnet Test token 3'
+  'T3'
 );
 
 export const LARA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x3F48CB103C3172C24a9F6cF3be92d571bF7072af',
+  '0x1F15130f50b25De000182914E06b5839290eEaF9',
   18,
   'LARA',
-  'Testnet Lara token'
+  'Lara Token'
 );
 
 export class TokenProvider implements ITokenProvider {

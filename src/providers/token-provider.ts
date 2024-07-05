@@ -706,7 +706,7 @@ export const USDT_TARAXA = new Token( //todo: replace with real address
 
 export const WTARA_TESTNET = new Token(
   ChainId.TARAXA_TESTNET,
-  '0x77f0ceda294cb940b9704ddf3ca3a9faa742381f',
+  '0xCd89dB7E3E32D8D273532814c9c94868db6A8642',
   18,
   'WTARA',
   'Wrapped TARA'

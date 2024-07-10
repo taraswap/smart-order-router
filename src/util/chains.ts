@@ -558,14 +558,14 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.TARAXA_TESTNET]: new Token(
     ChainId.TARAXA_TESTNET,
-    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    '0xcd89db7e3e32d8d273532814c9c94868db6a8642',
     18,
     'WTARA',
     'Wrapped TARA'
   ),
-  [ChainId.TARAXA]: new Token( //todo: replace with real address
+  [ChainId.TARAXA]: new Token(
     ChainId.TARAXA,
-    '0x5745CC77c362D459b78bC014d8940c2c98E08c54',
+    '0x5d0fa4c5668e5809c83c95a7cef3a9dd7c68d4fe',
     18,
     'WTARA',
     'Wrapped TARA'

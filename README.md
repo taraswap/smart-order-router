@@ -127,6 +127,12 @@ Value: 0x00
 Total ticks crossed: 7
 ```
 
+## Taraxa Mainnet
+
+```
+./bin/cli quote --tokenIn 0x46258327541455119869d7344dd2673facf5f104 --tokenOut 0x504ccec9265b2d749b832e737739962b1c9957b0 --amount 2000 --exactIn --minSplits 1 --router alpha --chainId 841
+```
+
 ## Taraxa testnet
 
 ```

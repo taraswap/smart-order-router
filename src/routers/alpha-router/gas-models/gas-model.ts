@@ -57,6 +57,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
+  USDT_TARAXA,
   USDT_TARAXA_TESTNET,
   WBTC_GOERLI,
 } from '../../../providers/token-provider';
@@ -122,6 +123,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BLAST]: [USDB_BLAST],
   [ChainId.ZORA]: [USDC_ZORA],
   [ChainId.ZKSYNC]: [DAI_ZKSYNC, USDCE_ZKSYNC, USDC_ZKSYNC],
+  [ChainId.TARAXA]: [USDT_TARAXA],
   [ChainId.TARAXA_TESTNET]: [USDT_TARAXA_TESTNET],
 };
 

@@ -53,6 +53,8 @@ export const HAS_L1_FEE = [
   ChainId.BASE_GOERLI,
   ChainId.BLAST,
   ChainId.ZORA,
+  ChainId.TARAXA,
+  ChainId.TARAXA_TESTNET,
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
@@ -379,7 +381,7 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
     case ChainId.TARAXA_TESTNET:
       return process.env.JSON_RPC_PROVIDER_TARAXA_TESTNET!;
     case ChainId.TARAXA:
-      return process.env.JSON_RPC_PROVIDER_TARAXA!;
+      return process.env.JSON_RPC_PROVIDER_TARAXA_MAINNET!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }

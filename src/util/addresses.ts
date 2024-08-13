@@ -28,15 +28,13 @@ export const TARAXA_TESTNET_V3_MIGRATOR_ADDRESS =
   CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3MigratorAddress;
 
 export const TARAXA_TICK_LENS_ADDRESS =
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].tickLensAddress;
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].tickLensAddress;
 export const TARAXA_NONFUNGIBLE_POSITION_MANAGER_ADDRESS =
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET]
-    .nonfungiblePositionManagerAddress;
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].nonfungiblePositionManagerAddress;
 export const TARAXA_SWAP_ROUTER_02_ADDRESS =
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].swapRouter02Address;
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].swapRouter02Address;
 export const TARAXA_V3_MIGRATOR_ADDRESS =
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3MigratorAddress;
-
+  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].v3MigratorAddress;
 
 export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   ...constructSameAddressMap(FACTORY_ADDRESS),
@@ -64,8 +62,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].v3CoreFactoryAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].v3CoreFactoryAddress,
-  [ChainId.TARAXA]:
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].v3CoreFactoryAddress,
+  [ChainId.TARAXA]: CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].v3CoreFactoryAddress,
 };
 
 export const QUOTER_V2_ADDRESSES: AddressMap = {
@@ -92,8 +89,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].quoterAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].quoterAddress,
-  [ChainId.TARAXA]:
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].quoterAddress,
+  [ChainId.TARAXA]: CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].quoterAddress,
 };
 
 export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
@@ -146,8 +142,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].multicallAddress,
   [ChainId.TARAXA_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA_TESTNET].multicallAddress,
-  [ChainId.TARAXA]:
-  CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].multicallAddress,
+  [ChainId.TARAXA]: CHAIN_TO_ADDRESSES_MAP[ChainId.TARAXA].multicallAddress,
 };
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {

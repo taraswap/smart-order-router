@@ -340,44 +340,6 @@ export const CHAIN_IDS_LIST = Object.values(ChainId).map((c) =>
 
 export const ID_TO_PROVIDER = (id: ChainId): string => {
   switch (id) {
-    case ChainId.MAINNET:
-      return process.env.JSON_RPC_PROVIDER!;
-    case ChainId.GOERLI:
-      return process.env.JSON_RPC_PROVIDER_GORLI!;
-    case ChainId.SEPOLIA:
-      return process.env.JSON_RPC_PROVIDER_SEPOLIA!;
-    case ChainId.OPTIMISM:
-      return process.env.JSON_RPC_PROVIDER_OPTIMISM!;
-    case ChainId.OPTIMISM_GOERLI:
-      return process.env.JSON_RPC_PROVIDER_OPTIMISM_GOERLI!;
-    case ChainId.OPTIMISM_SEPOLIA:
-      return process.env.JSON_RPC_PROVIDER_OPTIMISM_SEPOLIA!;
-    case ChainId.ARBITRUM_ONE:
-      return process.env.JSON_RPC_PROVIDER_ARBITRUM_ONE!;
-    case ChainId.ARBITRUM_GOERLI:
-      return process.env.JSON_RPC_PROVIDER_ARBITRUM_GOERLI!;
-    case ChainId.ARBITRUM_SEPOLIA:
-      return process.env.JSON_RPC_PROVIDER_ARBITRUM_SEPOLIA!;
-    case ChainId.POLYGON:
-      return process.env.JSON_RPC_PROVIDER_POLYGON!;
-    case ChainId.POLYGON_MUMBAI:
-      return process.env.JSON_RPC_PROVIDER_POLYGON_MUMBAI!;
-    case ChainId.CELO:
-      return process.env.JSON_RPC_PROVIDER_CELO!;
-    case ChainId.CELO_ALFAJORES:
-      return process.env.JSON_RPC_PROVIDER_CELO_ALFAJORES!;
-    case ChainId.BNB:
-      return process.env.JSON_RPC_PROVIDER_BNB!;
-    case ChainId.AVALANCHE:
-      return process.env.JSON_RPC_PROVIDER_AVALANCHE!;
-    case ChainId.BASE:
-      return process.env.JSON_RPC_PROVIDER_BASE!;
-    case ChainId.BLAST:
-      return process.env.JSON_RPC_PROVIDER_BLAST!;
-    case ChainId.ZORA:
-      return process.env.JSON_RPC_PROVIDER_ZORA!;
-    case ChainId.ZKSYNC:
-      return process.env.JSON_RPC_PROVIDER_ZKSYNC!;
     case ChainId.TARAXA_TESTNET:
       return process.env.JSON_RPC_PROVIDER_TARAXA_TESTNET!;
     case ChainId.TARAXA:

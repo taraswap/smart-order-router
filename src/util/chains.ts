@@ -53,8 +53,6 @@ export const HAS_L1_FEE = [
   ChainId.BASE_GOERLI,
   ChainId.BLAST,
   ChainId.ZORA,
-  ChainId.TARAXA,
-  ChainId.TARAXA_TESTNET,
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [

@@ -61,7 +61,7 @@ const FEE_DETECTOR_ADDRESS = (chainId: ChainId) => {
 // 10000 was not sufficient due to rounding errors for rebase token (e.g. stETH)
 const AMOUNT_TO_FLASH_BORROW = '100000';
 // 1M gas limit per validate call, should cover most swap cases
-const GAS_LIMIT_PER_VALIDATE = 1_000_000;
+const GAS_LIMIT_PER_VALIDATE = 315_000;
 
 export interface ITokenFeeFetcher {
   fetchFees(

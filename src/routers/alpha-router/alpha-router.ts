@@ -527,16 +527,16 @@ export class AlphaRouter
             (_) => {
               return {
                 multicallChunk: 80,
-                gasLimitPerCall: 1_200_000,
+                gasLimitPerCall: 390_000,
                 quoteMinSuccessRate: 0.1,
               };
             },
             {
-              gasLimitOverride: 3_000_000,
+              gasLimitOverride: 500_000,
               multicallChunk: 45,
             },
             {
-              gasLimitOverride: 3_000_000,
+              gasLimitOverride: 500_000,
               multicallChunk: 45,
             },
             {

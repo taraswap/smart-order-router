@@ -48,6 +48,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
+  USDT_TARAXA,
   WBTC_ARBITRUM,
   WBTC_MAINNET,
   WBTC_MOONBEAM,
@@ -170,6 +171,10 @@ export const CACHE_SEED_TOKENS: {
   },
   [ChainId.ZKSYNC]: {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.ZKSYNC],
+  },
+  [ChainId.TARAXA]: {
+    USDT: USDT_TARAXA,
+    WTARA: WRAPPED_NATIVE_CURRENCY[ChainId.TARAXA],
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

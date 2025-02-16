@@ -294,13 +294,13 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
       useMixedRouteQuoter: boolean
     ) => BatchParams = (_optimisticCachedRoutes, _useMixedRouteQuoter) => {
       return {
-        multicallChunk: 150,
-        gasLimitPerCall: 1_000_000,
+        multicallChunk: 100,
+        gasLimitPerCall: 315_000,
         quoteMinSuccessRate: 0.2,
       };
     },
     protected gasErrorFailureOverride: FailureOverrides = {
-      gasLimitOverride: 1_500_000,
+      gasLimitOverride: 315_000,
       multicallChunk: 100,
     },
     // successRateFailureOverrides and blockNumberConfig are not always override in alpha-router.
@@ -579,7 +579,6 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
                     ),
                   } as QuoteBatchFailed;
                 }
-
                 if (err.message.includes('out of gas')) {
                   return {
                     status: 'failed',

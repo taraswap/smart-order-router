@@ -696,12 +696,12 @@ export const WTARA = new Token(
   'Wrapped TARA'
 );
 
-export const USDT_TARAXA = new Token( //todo: replace with real address
+export const USDT_TARAXA = new Token(
   ChainId.TARAXA,
-  '0x46258327541455119869d7344dd2673facf5f104',
-  18,
-  'T0',
-  'TestToken0'
+  '0x69d411cbf6dbad54bfe36f81d0a39922625bc78c',
+  6,
+  'USDT',
+  'Tether USD'
 );
 
 export const WTARA_TESTNET = new Token(

@@ -129,6 +129,14 @@ Total ticks crossed: 7
 
 ## Taraxa Mainnet
 
+- TUSDT -> WTARA
+
+```
+./bin/cli quote --tokenIn 0x5a51fadEF313f503239D1FE0b25DE2486B022c02 --tokenOut 0x5d0fa4c5668e5809c83c95a7cef3a9dd7c68d4fe --amount 2000 --exactIn --minSplits 1 --router alpha --chainId 841
+```
+
+- T0 -> TUSDT
+
 ```
 ./bin/cli quote --tokenIn 0x46258327541455119869d7344dd2673facf5f104 --tokenOut 0x504ccec9265b2d749b832e737739962b1c9957b0 --amount 2000 --exactIn --minSplits 1 --router alpha --chainId 841
 ```
@@ -173,7 +181,6 @@ Total ticks crossed: 7
 ```
 ./bin/cli quote --tokenIn 0x7F5c764cBc14f9669B88837ca1490cCa17c31607 --tokenOut 0x4200000000000000000000000000000000000042 --amount 1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 10
 ```
-
 
 ## Optimism-Goerli
 
@@ -246,7 +253,6 @@ Total ticks crossed: 7
 ```
 ./bin/cli quote --tokenIn 0x5aea5775959fbc2557cc8789bc1bf90a239d9a91 --tokenOut 0x1d17cbcf0d6d143135ae902365d2e5e2a16538d4 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 324
 ```
-
 
 ## Adding a new Chain
 

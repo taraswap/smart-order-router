@@ -27,7 +27,12 @@ import {
   V2RouteWithValidQuote,
   V3RouteWithValidQuote,
 } from '../routers';
-import { CurrencyAmount, log, WRAPPED_NATIVE_CURRENCY } from '../util';
+import {
+  CurrencyAmount,
+  log,
+  V2_SUPPORTED,
+  WRAPPED_NATIVE_CURRENCY,
+} from '../util';
 
 import { opStackChains } from './l2FeeChains';
 import { buildSwapMethodParameters, buildTrade } from './methodParameters';
@@ -335,14 +340,25 @@ export async function calculateGasUsed(
   }
   // get fee in terms of quote token
   else {
-    const nativePools = await Promise.all([
-      getHighestLiquidityV3NativePool(
-        quoteToken,
-        v3PoolProvider,
-        providerConfig
-      ),
-      getV2NativePool(quoteToken, v2PoolProvider, providerConfig),
-    ]);
+    let nativePools: (Pool | Pair | null)[] = [];
+    if (V2_SUPPORTED.includes(chainId)) {
+      nativePools = await Promise.all([
+        getHighestLiquidityV3NativePool(
+          quoteToken,
+          v3PoolProvider,
+          providerConfig
+        ),
+        getV2NativePool(quoteToken, v2PoolProvider, providerConfig),
+      ]);
+    } else {
+      nativePools = await Promise.all([
+        getHighestLiquidityV3NativePool(
+          quoteToken,
+          v3PoolProvider,
+          providerConfig
+        ),
+      ]);
+    }
     const nativePool = nativePools.find((pool) => pool !== null);
 
     if (!nativePool) {
